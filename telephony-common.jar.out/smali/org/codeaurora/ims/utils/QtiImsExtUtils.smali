@@ -754,7 +754,7 @@
 
     .line 409
     :cond_0
-    invoke-virtual {v0, p1, v3}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 

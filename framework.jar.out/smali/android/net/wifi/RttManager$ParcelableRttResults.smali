@@ -275,14 +275,14 @@
 
     int-to-byte v1, v1
 
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 770
     iget-object v1, v0, Landroid/net/wifi/RttManager$RttResult;->LCR:Landroid/net/wifi/RttManager$WifiInformationElement;
 
-    iget-object v1, v1, Landroid/net/wifi/RttManager$WifiInformationElement;->data:[B
+    iget-byte v1, v1, Landroid/net/wifi/RttManager$WifiInformationElement;->id:B
 
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByteArray([B)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByte(B)V
 
     .line 772
     :cond_1

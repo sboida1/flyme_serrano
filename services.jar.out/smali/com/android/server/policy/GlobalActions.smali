@@ -381,21 +381,21 @@
 
     iput-object v3, p0, Lcom/android/server/policy/GlobalActions;->mScreenshotTimeout:Ljava/lang/Runnable;
 
-    .line 1365
+    .line 1363
     new-instance v3, Lcom/android/server/policy/GlobalActions$2;
 
     invoke-direct {v3, p0}, Lcom/android/server/policy/GlobalActions$2;-><init>(Lcom/android/server/policy/GlobalActions;)V
 
     iput-object v3, p0, Lcom/android/server/policy/GlobalActions;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1394
+    .line 1392
     new-instance v3, Lcom/android/server/policy/GlobalActions$3;
 
     invoke-direct {v3, p0}, Lcom/android/server/policy/GlobalActions$3;-><init>(Lcom/android/server/policy/GlobalActions;)V
 
     iput-object v3, p0, Lcom/android/server/policy/GlobalActions;->mRingerModeReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1403
+    .line 1401
     new-instance v3, Lcom/android/server/policy/GlobalActions$4;
 
     new-instance v6, Landroid/os/Handler;
@@ -406,7 +406,7 @@
 
     iput-object v3, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneModeObserver:Landroid/database/ContentObserver;
 
-    .line 1415
+    .line 1413
     new-instance v3, Lcom/android/server/policy/GlobalActions$5;
 
     invoke-direct {v3, p0}, Lcom/android/server/policy/GlobalActions$5;-><init>(Lcom/android/server/policy/GlobalActions;)V
@@ -895,56 +895,56 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 1454
+    .line 1452
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 1455
+    .line 1453
     const-string/jumbo v3, "airplane_mode_on"
 
-    .line 1456
+    .line 1454
     if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    .line 1453
+    .line 1451
     :goto_0
     invoke-static {v2, v3, v1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1457
+    .line 1455
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.AIRPLANE_MODE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1458
+    .line 1456
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x20000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1459
+    .line 1457
     const-string/jumbo v1, "state"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1460
+    .line 1458
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1461
+    .line 1459
     iget-boolean v1, p0, Lcom/android/server/policy/GlobalActions;->mHasTelephony:Z
 
     if-nez v1, :cond_0
 
-    .line 1462
+    .line 1460
     if-eqz p1, :cond_2
 
     sget-object v1, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->On:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
@@ -952,18 +952,18 @@
     :goto_1
     iput-object v1, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneState:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
-    .line 1452
+    .line 1450
     :cond_0
     return-void
 
-    .line 1456
+    .line 1454
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1462
+    .line 1460
     .restart local v0    # "intent":Landroid/content/Intent;
     :cond_2
     sget-object v1, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->Off:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
@@ -982,24 +982,24 @@
 
     const/4 v11, 0x0
 
-    .line 1475
+    .line 1473
     if-nez p0, :cond_0
 
     return-object v8
 
-    .line 1477
+    .line 1475
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 1478
+    .line 1476
     .local v3, "inWidth":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    .line 1479
+    .line 1477
     .local v2, "inHeight":I
     sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -1007,19 +1007,19 @@
 
     move-result-object v5
 
-    .line 1480
+    .line 1478
     .local v5, "output":Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v5}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1481
+    .line 1479
     .local v0, "canvas":Landroid/graphics/Canvas;
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1482
+    .line 1480
     .local v6, "paint":Landroid/graphics/Paint;
     new-instance v8, Landroid/graphics/BitmapShader;
 
@@ -1031,12 +1031,12 @@
 
     invoke-virtual {v6, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1483
+    .line 1481
     const/4 v8, 0x1
 
     invoke-virtual {v6, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 1484
+    .line 1482
     new-instance v7, Landroid/graphics/RectF;
 
     int-to-float v8, v3
@@ -1045,7 +1045,7 @@
 
     invoke-direct {v7, v11, v11, v8, v9}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 1485
+    .line 1483
     .local v7, "srcRect":Landroid/graphics/RectF;
     new-instance v1, Landroid/graphics/RectF;
 
@@ -1055,22 +1055,22 @@
 
     invoke-direct {v1, v11, v11, v8, v9}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 1486
+    .line 1484
     .local v1, "dstRect":Landroid/graphics/RectF;
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 1487
+    .line 1485
     .local v4, "m":Landroid/graphics/Matrix;
     sget-object v8, Landroid/graphics/Matrix$ScaleToFit;->CENTER:Landroid/graphics/Matrix$ScaleToFit;
 
     invoke-virtual {v4, v7, v1, v8}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
 
-    .line 1488
+    .line 1486
     invoke-virtual {v0, v4}, Landroid/graphics/Canvas;->setMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1489
+    .line 1487
     div-int/lit8 v8, v3, 0x2
 
     int-to-float v8, v8
@@ -1085,7 +1085,7 @@
 
     invoke-virtual {v0, v8, v9, v10, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1490
+    .line 1488
     return-object v5
 .end method
 
@@ -1765,37 +1765,37 @@
     .locals 3
 
     .prologue
-    .line 1436
+    .line 1434
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1437
+    .line 1435
     const-string/jumbo v1, "airplane_mode_on"
 
     const/4 v2, 0x0
 
-    .line 1436
+    .line 1434
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 1437
+    .line 1435
     const/4 v1, 0x1
 
-    .line 1436
+    .line 1434
     if-ne v0, v1, :cond_0
 
-    .line 1438
+    .line 1436
     sget-object v0, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->On:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
-    .line 1436
+    .line 1434
     :goto_0
     return-object v0
 
-    .line 1438
+    .line 1436
     :cond_0
     sget-object v0, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->Off:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
@@ -1970,14 +1970,14 @@
     .locals 2
 
     .prologue
-    .line 1443
+    .line 1441
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mHasTelephony:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1445
+    .line 1443
     :cond_0
     invoke-direct {p0}, Lcom/android/server/policy/GlobalActions;->getUpdatedAirplaneToggleState()Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
@@ -1985,14 +1985,14 @@
 
     iput-object v0, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneState:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
-    .line 1446
+    .line 1444
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneModeOn:Lcom/android/server/policy/GlobalActions$ToggleAction;
 
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneState:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/GlobalActions$ToggleAction;->updateState(Lcom/android/server/policy/GlobalActions$ToggleAction$State;)V
 
-    .line 1441
+    .line 1439
     return-void
 .end method
 
@@ -2000,22 +2000,22 @@
     .locals 3
 
     .prologue
-    .line 869
+    .line 867
     invoke-direct {p0}, Lcom/android/server/policy/GlobalActions;->refreshSilentMode()V
 
-    .line 870
+    .line 868
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneModeOn:Lcom/android/server/policy/GlobalActions$ToggleAction;
 
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions;->mAirplaneState:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
     invoke-virtual {v1, v2}, Lcom/android/server/policy/GlobalActions$ToggleAction;->updateState(Lcom/android/server/policy/GlobalActions$ToggleAction$State;)V
 
-    .line 871
+    .line 869
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mAdapter:Lcom/android/server/policy/GlobalActions$MyAdapter;
 
     invoke-virtual {v1}, Lcom/android/server/policy/GlobalActions$MyAdapter;->notifyDataSetChanged()V
 
-    .line 872
+    .line 870
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mDialog:Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;
 
     invoke-virtual {v1}, Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
@@ -2026,19 +2026,19 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
-    .line 873
+    .line 871
     iget-boolean v1, p0, Lcom/android/server/policy/GlobalActions;->mShowSilentToggle:Z
 
     if-eqz v1, :cond_0
 
-    .line 874
+    .line 872
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string/jumbo v1, "android.media.RINGER_MODE_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 875
+    .line 873
     .local v0, "filter":Landroid/content/IntentFilter;
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
@@ -2046,7 +2046,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 868
+    .line 866
     .end local v0    # "filter":Landroid/content/IntentFilter;
     :cond_0
     return-void
@@ -2056,12 +2056,12 @@
     .locals 3
 
     .prologue
-    .line 880
+    .line 878
     iget-boolean v1, p0, Lcom/android/server/policy/GlobalActions;->mHasVibrator:Z
 
     if-nez v1, :cond_0
 
-    .line 882
+    .line 880
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1}, Landroid/media/AudioManager;->getRingerMode()I
@@ -2074,35 +2074,35 @@
 
     const/4 v0, 0x1
 
-    .line 883
+    .line 881
     .local v0, "silentModeOn":Z
     :goto_0
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mSilentModeAction:Lcom/android/server/policy/GlobalActions$Action;
 
     check-cast v1, Lcom/android/server/policy/GlobalActions$ToggleAction;
 
-    .line 884
+    .line 882
     if-eqz v0, :cond_2
 
     sget-object v2, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->On:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
-    .line 883
+    .line 881
     :goto_1
     invoke-virtual {v1, v2}, Lcom/android/server/policy/GlobalActions$ToggleAction;->updateState(Lcom/android/server/policy/GlobalActions$ToggleAction$State;)V
 
-    .line 879
+    .line 877
     .end local v0    # "silentModeOn":Z
     :cond_0
     return-void
 
-    .line 882
+    .line 880
     :cond_1
     const/4 v0, 0x0
 
     .restart local v0    # "silentModeOn":Z
     goto :goto_0
 
-    .line 884
+    .line 882
     :cond_2
     sget-object v2, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->Off:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
@@ -2324,9 +2324,6 @@
     iput-object v1, p0, Lcom/android/server/policy/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
 
     .line 861
-    if-nez p1, :cond_1
-
-    .line 862
     iget-object v3, p0, Lcom/android/server/policy/GlobalActions;->mHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/android/server/policy/GlobalActions;->mScreenshotTimeout:Ljava/lang/Runnable;
@@ -2363,7 +2360,7 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 902
+    .line 900
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mAdapter:Lcom/android/server/policy/GlobalActions$MyAdapter;
 
     invoke-virtual {v0, p2}, Lcom/android/server/policy/GlobalActions$MyAdapter;->getItem(I)Lcom/android/server/policy/GlobalActions$Action;
@@ -2374,10 +2371,10 @@
 
     if-nez v0, :cond_0
 
-    .line 903
+    .line 901
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 905
+    .line 903
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mAdapter:Lcom/android/server/policy/GlobalActions$MyAdapter;
 
@@ -2387,7 +2384,7 @@
 
     invoke-interface {v0}, Lcom/android/server/policy/GlobalActions$Action;->onPress()V
 
-    .line 901
+    .line 899
     return-void
 .end method
 
@@ -2396,12 +2393,12 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 890
+    .line 888
     iget-boolean v1, p0, Lcom/android/server/policy/GlobalActions;->mShowSilentToggle:Z
 
     if-eqz v1, :cond_0
 
-    .line 892
+    .line 890
     :try_start_0
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
@@ -2411,16 +2408,16 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 889
+    .line 887
     :cond_0
     :goto_0
     return-void
 
-    .line 893
+    .line 891
     :catch_0
     move-exception v0
 
-    .line 895
+    .line 893
     .local v0, "ie":Ljava/lang/IllegalArgumentException;
     const-string/jumbo v1, "GlobalActions"
 
@@ -2478,26 +2475,26 @@
     .locals 3
 
     .prologue
-    .line 1389
+    .line 1387
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1391
+    .line 1389
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v1, "power_menu_actions"
 
     const/4 v2, -0x2
 
-    .line 1390
+    .line 1388
     invoke-static {v0, v1, v2}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/policy/GlobalActions;->mActions:Ljava/lang/String;
 
-    .line 1388
+    .line 1386
     return-void
 .end method

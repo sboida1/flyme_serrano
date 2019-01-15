@@ -54,7 +54,7 @@ vendor_modify_images := boot
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain NfcNci PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager Tag WallpaperCropper
+vendor_saved_apps := Bluetooth BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain NfcNci PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WallpaperBackup WAPPushManager BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager Tag WallpaperCropper CMSettingsProvider CMAudioService
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -105,7 +105,7 @@ vendor_modify_jars := framework services telephony-common wifi-service
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := Settings SystemUI TeleService
+#board_modify_apps := TeleService
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.
@@ -148,9 +148,7 @@ override_property += \
 # You can add the property name in the value from the build.prop.
 #-----------------------------------------------------------------------------
 # remove_property += \
-#	ro.build.selinux
-#     	dev.defaultwallpaper
-    
+#     dev.defaultwallpaper
 
 ##############################################################################
 # Defines whether uses assertions in /META-INF/com/google/android/updater-script of the OTA package.

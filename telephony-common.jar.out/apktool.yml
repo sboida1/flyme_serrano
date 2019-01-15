@@ -6,8 +6,7 @@ isFrameworkApk: false
 packageInfo: null
 sdkInfo: null
 sharedLibrary: false
-sparseResources: false
 unknownFiles: {}
 usesFramework: null
-version: 2.3.4
+version: 2.3.0
 versionInfo: null

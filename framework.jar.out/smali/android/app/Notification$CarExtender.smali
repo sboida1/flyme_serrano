@@ -100,7 +100,7 @@
     .line 6557
     const-string/jumbo v2, "app_color"
 
-    invoke-virtual {v1, v2, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {v1, v2, v4}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;I)I
 
     move-result v2
 
@@ -176,7 +176,7 @@
 
     iget v3, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
-    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 6580
     :cond_1

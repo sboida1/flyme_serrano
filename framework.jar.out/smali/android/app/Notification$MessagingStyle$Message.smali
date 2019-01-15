@@ -148,7 +148,7 @@
     :try_start_0
     const-string/jumbo v2, "text"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -156,7 +156,7 @@
 
     const-string/jumbo v2, "time"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -174,7 +174,7 @@
     .line 5097
     const-string/jumbo v3, "time"
 
-    invoke-virtual {p0, v3}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+    invoke-virtual {p0, v3}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v4
 
@@ -191,7 +191,7 @@
     .local v1, "message":Landroid/app/Notification$MessagingStyle$Message;
     const-string/jumbo v2, "type"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -200,7 +200,7 @@
     .line 5099
     const-string/jumbo v2, "uri"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -210,7 +210,7 @@
     .line 5101
     const-string/jumbo v2, "type"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -342,7 +342,7 @@
 
     iget-wide v2, p0, Landroid/app/Notification$MessagingStyle$Message;->mTimestamp:J
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
 
     .line 5057
     iget-object v1, p0, Landroid/app/Notification$MessagingStyle$Message;->mSender:Ljava/lang/CharSequence;
@@ -367,7 +367,7 @@
 
     iget-object v2, p0, Landroid/app/Notification$MessagingStyle$Message;->mDataMimeType:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 5063
     :cond_2

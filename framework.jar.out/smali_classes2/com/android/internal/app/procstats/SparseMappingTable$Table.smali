@@ -30,25 +30,25 @@
     .param p1, "parent"    # Lcom/android/internal/app/procstats/SparseMappingTable;
 
     .prologue
-    .line 77
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 72
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
-    .line 78
+    .line 77
     iput-object p1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
-    .line 79
+    .line 78
     invoke-static {p1}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get2(Lcom/android/internal/app/procstats/SparseMappingTable;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
-    .line 77
+    .line 76
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 0
 
     .prologue
-    .line 366
+    .line 365
     return-void
 .end method
 
@@ -65,26 +65,26 @@
     .param p1, "id"    # B
 
     .prologue
-    .line 400
+    .line 399
     const/4 v1, 0x0
 
-    .line 401
+    .line 400
     .local v1, "lo":I
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     add-int/lit8 v0, v4, -0x1
 
-    .line 403
+    .line 402
     .local v0, "hi":I
     :goto_0
     if-gt v1, v0, :cond_2
 
-    .line 404
+    .line 403
     add-int v4, v1, v0
 
     ushr-int/lit8 v2, v4, 0x1
 
-    .line 405
+    .line 404
     .local v2, "mid":I
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
@@ -96,29 +96,29 @@
 
     int-to-byte v3, v4
 
-    .line 407
+    .line 406
     .local v3, "midId":B
     if-ge v3, p1, :cond_0
 
-    .line 408
+    .line 407
     add-int/lit8 v1, v2, 0x1
 
     goto :goto_0
 
-    .line 409
+    .line 408
     :cond_0
     if-le v3, p1, :cond_1
 
-    .line 410
+    .line 409
     add-int/lit8 v0, v2, -0x1
 
     goto :goto_0
 
-    .line 412
+    .line 411
     :cond_1
     return v2
 
-    .line 415
+    .line 414
     .end local v2    # "mid":I
     .end local v3    # "midId":B
     :cond_2
@@ -132,24 +132,24 @@
     .param p1, "log"    # Z
 
     .prologue
-    .line 424
+    .line 423
     iget-object v7, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v7}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get0(Lcom/android/internal/app/procstats/SparseMappingTable;)Ljava/util/ArrayList;
 
     move-result-object v5
 
-    .line 425
+    .line 424
     .local v5, "longs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[J>;"
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 427
+    .line 426
     .local v6, "longsSize":I
     iget v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 428
+    .line 427
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -157,24 +157,24 @@
     :goto_0
     if-ge v2, v0, :cond_3
 
-    .line 429
+    .line 428
     iget-object v7, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v4, v7, v2
 
-    .line 430
+    .line 429
     .local v4, "key":I
     invoke-static {v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->getArrayFromKey(I)I
 
     move-result v1
 
-    .line 431
+    .line 430
     .local v1, "arrayIndex":I
     invoke-static {v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
     move-result v3
 
-    .line 432
+    .line 431
     .local v3, "index":I
     if-ge v1, v6, :cond_0
 
@@ -188,11 +188,11 @@
 
     if-lt v3, v7, :cond_2
 
-    .line 433
+    .line 432
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 434
+    .line 433
     const-string/jumbo v7, "SparseMappingTable"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -229,19 +229,19 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 436
+    .line 435
     :cond_1
     const/4 v7, 0x0
 
     return v7
 
-    .line 428
+    .line 427
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 440
+    .line 439
     .end local v1    # "arrayIndex":I
     .end local v3    # "index":I
     .end local v4    # "key":I
@@ -259,22 +259,22 @@
     .param p2, "valueCount"    # I
 
     .prologue
-    .line 89
+    .line 88
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 90
+    .line 89
     const/4 v7, 0x0
 
     iput v7, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 92
+    .line 91
     invoke-virtual {p1}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getKeyCount()I
 
     move-result v0
 
-    .line 93
+    .line 92
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -282,12 +282,12 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 94
+    .line 93
     invoke-virtual {p1, v1}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getKeyAt(I)I
 
     move-result v5
 
-    .line 95
+    .line 94
     .local v5, "theirKey":I
     iget-object v7, p1, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -305,19 +305,19 @@
 
     check-cast v6, [J
 
-    .line 97
+    .line 96
     .local v6, "theirLongs":[J
     invoke-static {v5}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIdFromKey(I)B
 
     move-result v2
 
-    .line 99
+    .line 98
     .local v2, "id":B
     invoke-virtual {p0, v2, p2}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getOrAddKey(BI)I
 
     move-result v3
 
-    .line 100
+    .line 99
     .local v3, "myKey":I
     iget-object v7, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -335,26 +335,26 @@
 
     check-cast v4, [J
 
-    .line 102
+    .line 101
     .local v4, "myLongs":[J
     invoke-static {v5}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
     move-result v7
 
-    .line 103
+    .line 102
     invoke-static {v3}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
     move-result v8
 
-    .line 102
+    .line 101
     invoke-static {v6, v7, v4, v8, p2}, Ljava/lang/System;->arraycopy([JI[JII)V
 
-    .line 93
+    .line 92
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 88
+    .line 87
     .end local v2    # "id":B
     .end local v3    # "myKey":I
     .end local v4    # "myLongs":[J
@@ -368,28 +368,28 @@
     .locals 6
 
     .prologue
-    .line 444
+    .line 443
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 445
+    .line 444
     .local v3, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v4, "SparseMappingTable.Table{mSequence="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 446
+    .line 445
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 447
+    .line 446
     const-string/jumbo v4, " mParent.mSequence="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 448
+    .line 447
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get2(Lcom/android/internal/app/procstats/SparseMappingTable;)I
@@ -398,12 +398,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 449
+    .line 448
     const-string/jumbo v4, " mParent.mLongs.size()="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 450
+    .line 449
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get0(Lcom/android/internal/app/procstats/SparseMappingTable;)Ljava/util/ArrayList;
@@ -416,38 +416,38 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 451
+    .line 450
     const-string/jumbo v4, " mSize="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 452
+    .line 451
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 453
+    .line 452
     const-string/jumbo v4, " mTable="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 454
+    .line 453
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     if-nez v4, :cond_0
 
-    .line 455
+    .line 454
     const-string/jumbo v4, "null"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 473
+    .line 472
     :goto_0
     const-string/jumbo v4, " clazz="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 474
+    .line 473
     invoke-virtual {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getClass()Ljava/lang/Class;
 
     move-result-object v4
@@ -458,49 +458,49 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 475
+    .line 474
     const/16 v4, 0x7d
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 477
+    .line 476
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     return-object v4
 
-    .line 457
+    .line 456
     :cond_0
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     array-length v0, v4
 
-    .line 458
+    .line 457
     .local v0, "N":I
     const/16 v4, 0x5b
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 459
+    .line 458
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 460
+    .line 459
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v2, v4, v1
 
-    .line 461
+    .line 460
     .local v2, "key":I
     const-string/jumbo v4, "0x"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 462
+    .line 461
     shr-int/lit8 v4, v2, 0x0
 
     and-int/lit16 v4, v4, 0xff
@@ -511,12 +511,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
+    .line 462
     const-string/jumbo v4, "/0x"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 464
+    .line 463
     shr-int/lit8 v4, v2, 0x8
 
     and-int/lit16 v4, v4, 0xff
@@ -527,12 +527,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 465
+    .line 464
     const-string/jumbo v4, "/0x"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 466
+    .line 465
     shr-int/lit8 v4, v2, 0x10
 
     const v5, 0xffff
@@ -545,23 +545,23 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 467
+    .line 466
     add-int/lit8 v4, v0, -0x1
 
     if-eq v1, v4, :cond_1
 
-    .line 468
+    .line 467
     const-string/jumbo v4, ", "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 459
+    .line 458
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 471
+    .line 470
     .end local v2    # "key":I
     :cond_2
     const/16 v4, 0x5d
@@ -576,10 +576,10 @@
     .param p1, "key"    # I
 
     .prologue
-    .line 249
+    .line 248
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 251
+    .line 250
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v0}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get0(Lcom/android/internal/app/procstats/SparseMappingTable;)Ljava/util/ArrayList;
@@ -604,26 +604,26 @@
     .param p1, "id"    # B
 
     .prologue
-    .line 164
+    .line 163
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 166
+    .line 165
     invoke-direct {p0, p1}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->binarySearch(B)I
 
     move-result v0
 
-    .line 167
+    .line 166
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 168
+    .line 167
     iget-object v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v1, v1, v0
 
     return v1
 
-    .line 170
+    .line 169
     :cond_0
     const/4 v1, -0x1
 
@@ -635,7 +635,7 @@
     .param p1, "i"    # I
 
     .prologue
-    .line 360
+    .line 359
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v0, v0, p1
@@ -647,7 +647,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 352
     iget v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     return v0
@@ -661,26 +661,26 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 120
+    .line 119
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 122
+    .line 121
     invoke-direct {p0, p1}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->binarySearch(B)I
 
     move-result v1
 
-    .line 123
+    .line 122
     .local v1, "idx":I
     if-ltz v1, :cond_0
 
-    .line 125
+    .line 124
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v5, v5, v1
 
     return v5
 
-    .line 130
+    .line 129
     :cond_0
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -688,7 +688,7 @@
 
     move-result-object v3
 
-    .line 131
+    .line 130
     .local v3, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[J>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -696,7 +696,7 @@
 
     add-int/lit8 v4, v5, -0x1
 
-    .line 132
+    .line 131
     .local v4, "whichArray":I
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -704,7 +704,7 @@
 
     check-cast v0, [J
 
-    .line 133
+    .line 132
     .local v0, "array":[J
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -718,27 +718,27 @@
 
     if-le v5, v6, :cond_1
 
-    .line 135
+    .line 134
     const/16 v5, 0x1000
 
     new-array v0, v5, [J
 
-    .line 136
+    .line 135
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 137
+    .line 136
     add-int/lit8 v4, v4, 0x1
 
-    .line 138
+    .line 137
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v5, v7}, Lcom/android/internal/app/procstats/SparseMappingTable;->-set0(Lcom/android/internal/app/procstats/SparseMappingTable;I)I
 
-    .line 143
+    .line 142
     :cond_1
     shl-int/lit8 v5, v4, 0x8
 
-    .line 144
+    .line 143
     iget-object v6, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v6}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get1(Lcom/android/internal/app/procstats/SparseMappingTable;)I
@@ -747,16 +747,16 @@
 
     shl-int/lit8 v6, v6, 0x10
 
-    .line 143
+    .line 142
     or-int/2addr v5, v6
 
-    .line 145
+    .line 144
     shl-int/lit8 v6, p1, 0x0
 
-    .line 143
+    .line 142
     or-int v2, v5, v6
 
-    .line 147
+    .line 146
     .local v2, "key":I
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -768,37 +768,37 @@
 
     invoke-static {v5, v6}, Lcom/android/internal/app/procstats/SparseMappingTable;->-set0(Lcom/android/internal/app/procstats/SparseMappingTable;I)I
 
-    .line 150
+    .line 149
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     if-eqz v5, :cond_2
 
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 151
+    .line 150
     :goto_0
     iget v6, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     not-int v7, v1
 
-    .line 150
+    .line 149
     invoke-static {v5, v6, v7, v2}, Lcom/android/internal/util/GrowingArrayUtils;->insert([IIII)[I
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 152
+    .line 151
     iget v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     add-int/lit8 v5, v5, 0x1
 
     iput v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 154
+    .line 153
     return v2
 
-    .line 150
+    .line 149
     :cond_2
     sget-object v5, Llibcore/util/EmptyArray;->INT:[I
 
@@ -810,7 +810,7 @@
     .param p1, "key"    # I
 
     .prologue
-    .line 181
+    .line 180
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getValue(II)J
@@ -826,10 +826,10 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 195
+    .line 194
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 198
+    .line 197
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
@@ -847,7 +847,7 @@
 
     check-cast v0, [J
 
-    .line 199
+    .line 198
     .local v0, "array":[J
     invoke-static {p1}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
@@ -861,12 +861,12 @@
 
     return-wide v2
 
-    .line 200
+    .line 199
     .end local v0    # "array":[J
     :catch_0
     move-exception v1
 
-    .line 201
+    .line 200
     .local v1, "ex":Ljava/lang/IndexOutOfBoundsException;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -886,10 +886,10 @@
 
     move-result-object v2
 
-    .line 202
+    .line 201
     const-string/jumbo v3, " index="
 
-    .line 201
+    .line 200
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -898,20 +898,20 @@
 
     move-result-object v2
 
-    .line 202
+    .line 201
     const-string/jumbo v3, " -- "
 
-    .line 201
+    .line 200
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 202
+    .line 201
     invoke-virtual {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->dumpInternalState()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 201
+    .line 200
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -922,7 +922,7 @@
 
     invoke-static {v2, v1}, Lcom/android/internal/app/procstats/SparseMappingTable;->-wrap1(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 203
+    .line 202
     const-wide/16 v2, 0x0
 
     return-wide v2
@@ -933,7 +933,7 @@
     .param p1, "id"    # B
 
     .prologue
-    .line 214
+    .line 213
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->getValueForId(BI)J
@@ -951,24 +951,24 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 226
+    .line 225
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 228
+    .line 227
     invoke-direct {p0, p1}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->binarySearch(B)I
 
     move-result v2
 
-    .line 229
+    .line 228
     .local v2, "idx":I
     if-ltz v2, :cond_0
 
-    .line 230
+    .line 229
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v3, v4, v2
 
-    .line 232
+    .line 231
     .local v3, "key":I
     :try_start_0
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
@@ -987,7 +987,7 @@
 
     check-cast v0, [J
 
-    .line 233
+    .line 232
     .local v0, "array":[J
     invoke-static {v3}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
@@ -1001,12 +1001,12 @@
 
     return-wide v4
 
-    .line 234
+    .line 233
     .end local v0    # "array":[J
     :catch_0
     move-exception v1
 
-    .line 235
+    .line 234
     .local v1, "ex":Ljava/lang/IndexOutOfBoundsException;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1036,28 +1036,28 @@
 
     move-result-object v4
 
-    .line 236
+    .line 235
     const-string/jumbo v5, " key=0x"
 
-    .line 235
+    .line 234
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 236
+    .line 235
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 235
+    .line 234
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 236
+    .line 235
     const-string/jumbo v5, " index="
 
-    .line 235
+    .line 234
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1066,20 +1066,20 @@
 
     move-result-object v4
 
-    .line 237
+    .line 236
     const-string/jumbo v5, " -- "
 
-    .line 235
+    .line 234
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 237
+    .line 236
     invoke-virtual {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->dumpInternalState()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 235
+    .line 234
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1090,10 +1090,10 @@
 
     invoke-static {v4, v1}, Lcom/android/internal/app/procstats/SparseMappingTable;->-wrap1(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 238
+    .line 237
     return-wide v6
 
-    .line 241
+    .line 240
     .end local v1    # "ex":Ljava/lang/IndexOutOfBoundsException;
     .end local v3    # "key":I
     :cond_0
@@ -1111,33 +1111,33 @@
 
     const/4 v3, 0x0
 
-    .line 327
+    .line 326
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
-    .line 328
+    .line 327
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 329
+    .line 328
     iget v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     if-eqz v1, :cond_0
 
-    .line 330
+    .line 329
     iget v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     new-array v1, v1, [I
 
     iput-object v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 331
+    .line 330
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1146,7 +1146,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 332
+    .line 331
     iget-object v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -1155,17 +1155,17 @@
 
     aput v2, v1, v0
 
-    .line 331
+    .line 330
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 335
+    .line 334
     .end local v0    # "i":I
     :cond_0
     iput-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 339
+    .line 338
     :cond_1
     invoke-direct {p0, v4}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->validateKeys(Z)Z
 
@@ -1173,17 +1173,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 340
+    .line 339
     return v4
 
-    .line 343
+    .line 342
     :cond_2
     iput v3, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 344
+    .line 343
     iput-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 345
+    .line 344
     return v3
 .end method
 
@@ -1191,17 +1191,17 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 299
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
-    .line 301
+    .line 300
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
-    .line 306
+    .line 305
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
 
     invoke-static {v0}, Lcom/android/internal/app/procstats/SparseMappingTable;->-get2(Lcom/android/internal/app/procstats/SparseMappingTable;)I
@@ -1210,7 +1210,7 @@
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
-    .line 298
+    .line 297
     return-void
 .end method
 
@@ -1221,17 +1221,17 @@
     .param p3, "value"    # J
 
     .prologue
-    .line 273
+    .line 272
     invoke-direct {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->assertConsistency()V
 
-    .line 275
+    .line 274
     const-wide/16 v2, 0x0
 
     cmp-long v2, p3, v2
 
     if-gez v2, :cond_0
 
-    .line 276
+    .line 275
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1242,20 +1242,20 @@
 
     move-result-object v2
 
-    .line 277
+    .line 276
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 276
+    .line 275
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 278
+    .line 277
     const-string/jumbo v3, " index="
 
-    .line 276
+    .line 275
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1264,10 +1264,10 @@
 
     move-result-object v2
 
-    .line 278
+    .line 277
     const-string/jumbo v3, " value="
 
-    .line 276
+    .line 275
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1276,20 +1276,20 @@
 
     move-result-object v2
 
-    .line 279
+    .line 278
     const-string/jumbo v3, " -- "
 
-    .line 276
+    .line 275
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 279
+    .line 278
     invoke-virtual {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->dumpInternalState()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 276
+    .line 275
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1300,10 +1300,10 @@
 
     invoke-static {v2}, Lcom/android/internal/app/procstats/SparseMappingTable;->-wrap0(Ljava/lang/String;)V
 
-    .line 280
+    .line 279
     return-void
 
-    .line 284
+    .line 283
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mParent:Lcom/android/internal/app/procstats/SparseMappingTable;
@@ -1322,7 +1322,7 @@
 
     check-cast v0, [J
 
-    .line 285
+    .line 284
     .local v0, "array":[J
     invoke-static {p1}, Lcom/android/internal/app/procstats/SparseMappingTable;->getIndexFromKey(I)I
 
@@ -1334,15 +1334,15 @@
     :try_end_0
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 272
+    .line 271
     return-void
 
-    .line 286
+    .line 285
     .end local v0    # "array":[J
     :catch_0
     move-exception v1
 
-    .line 287
+    .line 286
     .local v1, "ex":Ljava/lang/IndexOutOfBoundsException;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1362,10 +1362,10 @@
 
     move-result-object v2
 
-    .line 288
+    .line 287
     const-string/jumbo v3, " index="
 
-    .line 287
+    .line 286
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1374,10 +1374,10 @@
 
     move-result-object v2
 
-    .line 288
+    .line 287
     const-string/jumbo v3, " value="
 
-    .line 287
+    .line 286
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1386,20 +1386,20 @@
 
     move-result-object v2
 
-    .line 289
+    .line 288
     const-string/jumbo v3, " -- "
 
-    .line 287
+    .line 286
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 289
+    .line 288
     invoke-virtual {p0}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->dumpInternalState()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 287
+    .line 286
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1410,7 +1410,7 @@
 
     invoke-static {v2, v1}, Lcom/android/internal/app/procstats/SparseMappingTable;->-wrap1(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 290
+    .line 289
     return-void
 .end method
 
@@ -1420,12 +1420,12 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 261
+    .line 260
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2, p3}, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->setValue(IIJ)V
 
-    .line 260
+    .line 259
     return-void
 .end method
 
@@ -1434,17 +1434,17 @@
     .param p1, "out"    # Landroid/os/Parcel;
 
     .prologue
-    .line 314
+    .line 313
     iget v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSequence:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 315
+    .line 314
     iget v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mSize:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 316
+    .line 315
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1453,19 +1453,19 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 317
+    .line 316
     iget-object v1, p0, Lcom/android/internal/app/procstats/SparseMappingTable$Table;->mTable:[I
 
     aget v1, v1, v0
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 316
+    .line 315
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 313
+    .line 312
     :cond_0
     return-void
 .end method

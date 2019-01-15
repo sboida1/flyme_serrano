@@ -30,18 +30,18 @@
     .param p3, "log"    # Landroid/util/LocalLog$ReadOnlyLocalLog;
 
     .prologue
-    .line 492
+    .line 487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 493
+    .line 488
     iput-object p1, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mNetwork:Landroid/net/Network;
 
-    .line 494
+    .line 489
     iput-object p2, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mNetworkExtraInfo:Ljava/lang/String;
 
-    .line 495
+    .line 490
     iput-object p3, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mLog:Landroid/util/LocalLog$ReadOnlyLocalLog;
 
-    .line 492
+    .line 487
     return-void
 .end method

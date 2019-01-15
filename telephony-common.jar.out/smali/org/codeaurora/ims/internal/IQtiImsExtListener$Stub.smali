@@ -68,7 +68,7 @@
     .line 20
     const-string/jumbo v0, "org.codeaurora.ims.internal.IQtiImsExtListener"
 
-    invoke-virtual {p0, p0, v0}, Lorg/codeaurora/ims/internal/IQtiImsExtListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 18
     return-void

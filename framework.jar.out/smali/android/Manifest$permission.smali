@@ -15,6 +15,11 @@
 
 
 # static fields
+
+.field public static final MEIZU_CONTROL_PACKAGE_PERMISSIONS:Ljava/lang/String; = "flyme.permission.MEIZU_CONTROL_PACKAGE_PERMISSIONS"
+
+.field public static final MEIZU_DATASAVE_MODE_CHANGED:Ljava/lang/String; = "flyme.permission.send.MEIZU_DATASAVE_MODE_CHANGED"
+
 .field public static final ACCESS_CACHE_FILESYSTEM:Ljava/lang/String; = "android.permission.ACCESS_CACHE_FILESYSTEM"
 
 .field public static final ACCESS_CHECKIN_PROPERTIES:Ljava/lang/String; = "android.permission.ACCESS_CHECKIN_PROPERTIES"
@@ -437,8 +442,6 @@
 .field public static final MOUNT_UNMOUNT_FILESYSTEMS:Ljava/lang/String; = "android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
 
 .field public static final MOVE_PACKAGE:Ljava/lang/String; = "android.permission.MOVE_PACKAGE"
-
-.field public static final NETWORK_STACK:Ljava/lang/String; = "android.permission.NETWORK_STACK"
 
 .field public static final NET_ADMIN:Ljava/lang/String; = "android.permission.NET_ADMIN"
 

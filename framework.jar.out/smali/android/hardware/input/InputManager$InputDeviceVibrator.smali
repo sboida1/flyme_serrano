@@ -121,7 +121,7 @@
 
     const/4 v1, -0x1
 
-    invoke-virtual {p0, v0, v1}, Landroid/hardware/input/InputManager$InputDeviceVibrator;->vibrate([JI)V
+    invoke-virtual {p0, v0, v1}, Landroid/os/Vibrator;->vibrate([JI)V
 
     .line 1146
     return-void

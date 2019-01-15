@@ -104,17 +104,17 @@
     .locals 2
 
     .prologue
-    .line 481
+    .line 480
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 65
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
-    .line 482
+    .line 481
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     const/16 v1, 0x1000
@@ -123,7 +123,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 481
+    .line 480
     return-void
 .end method
 
@@ -132,7 +132,7 @@
     .param p0, "key"    # I
 
     .prologue
-    .line 630
+    .line 623
     shr-int/lit8 v0, p0, 0x8
 
     and-int/lit16 v0, v0, 0xff
@@ -145,7 +145,7 @@
     .param p0, "key"    # I
 
     .prologue
-    .line 621
+    .line 614
     shr-int/lit8 v0, p0, 0x0
 
     and-int/lit16 v0, v0, 0xff
@@ -160,7 +160,7 @@
     .param p0, "key"    # I
 
     .prologue
-    .line 639
+    .line 632
     shr-int/lit8 v0, p0, 0x10
 
     const v1, 0xffff
@@ -175,7 +175,7 @@
     .param p0, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 647
+    .line 640
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Stack trace"
@@ -184,7 +184,7 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/app/procstats/SparseMappingTable;->logOrThrow(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 646
+    .line 639
     return-void
 .end method
 
@@ -194,12 +194,12 @@
     .param p1, "th"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 655
+    .line 648
     const-string/jumbo v0, "SparseMappingTable"
 
     invoke-static {v0, p0, p1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 656
+    .line 649
     sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
     const-string/jumbo v1, "eng"
@@ -210,14 +210,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 657
+    .line 650
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
 
-    .line 654
+    .line 647
     :cond_0
     return-void
 .end method
@@ -229,14 +229,14 @@
     .param p2, "num"    # I
 
     .prologue
-    .line 596
+    .line 589
     array-length v0, p1
 
-    .line 597
+    .line 590
     .local v0, "alen":I
     if-le p2, v0, :cond_0
 
-    .line 598
+    .line 591
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -267,10 +267,10 @@
 
     invoke-static {v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->logOrThrow(Ljava/lang/String;)V
 
-    .line 599
+    .line 592
     return-void
 
-    .line 602
+    .line 595
     :cond_0
     const/4 v2, 0x0
 
@@ -278,33 +278,33 @@
     :goto_0
     if-ge v2, p2, :cond_2
 
-    .line 603
+    .line 596
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 604
+    .line 597
     .local v3, "val":I
     if-ltz v3, :cond_1
 
-    .line 605
+    .line 598
     int-to-long v4, v3
 
     aput-wide v4, p1, v2
 
-    .line 602
+    .line 595
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 607
+    .line 600
     :cond_1
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 608
+    .line 601
     .local v1, "bottom":I
     not-int v4, v3
 
@@ -322,24 +322,24 @@
 
     goto :goto_1
 
-    .line 611
+    .line 604
     .end local v1    # "bottom":I
     .end local v3    # "val":I
     :cond_2
     :goto_2
     if-ge v2, v0, :cond_3
 
-    .line 612
+    .line 605
     const-wide/16 v4, 0x0
 
     aput-wide v4, p1, v2
 
-    .line 613
+    .line 606
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 595
+    .line 588
     :cond_3
     return-void
 .end method
@@ -353,17 +353,17 @@
     .prologue
     const-wide/32 v8, 0x7fffffff
 
-    .line 575
+    .line 568
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, p2, :cond_2
 
-    .line 576
+    .line 569
     aget-wide v4, p1, v1
 
-    .line 577
+    .line 570
     .local v4, "val":J
     const-wide/16 v6, 0x0
 
@@ -371,7 +371,7 @@
 
     if-gez v3, :cond_0
 
-    .line 578
+    .line 571
     const-string/jumbo v3, "SparseMappingTable"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -394,27 +394,27 @@
 
     invoke-static {v3, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 579
+    .line 572
     const-wide/16 v4, 0x0
 
-    .line 581
+    .line 574
     :cond_0
     cmp-long v3, v4, v8
 
     if-gtz v3, :cond_1
 
-    .line 582
+    .line 575
     long-to-int v3, v4
 
     invoke-virtual {p0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 575
+    .line 568
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 584
+    .line 577
     :cond_1
     const/16 v3, 0x20
 
@@ -426,7 +426,7 @@
 
     not-int v2, v3
 
-    .line 585
+    .line 578
     .local v2, "top":I
     const-wide v6, 0xffffffffL
 
@@ -434,16 +434,16 @@
 
     long-to-int v0, v6
 
-    .line 586
+    .line 579
     .local v0, "bottom":I
     invoke-virtual {p0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 587
+    .line 580
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
-    .line 574
+    .line 567
     .end local v0    # "bottom":I
     .end local v2    # "top":I
     .end local v4    # "val":J
@@ -458,69 +458,69 @@
     .param p1, "includeData"    # Z
 
     .prologue
-    .line 545
+    .line 538
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 546
+    .line 539
     .local v4, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v5, "SparseMappingTable{"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 547
+    .line 540
     const-string/jumbo v5, "mSequence="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 548
+    .line 541
     iget v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mSequence:I
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 549
+    .line 542
     const-string/jumbo v5, " mNextIndex="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 543
     iget v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 551
+    .line 544
     const-string/jumbo v5, " mLongs.size="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 552
+    .line 545
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 553
+    .line 546
     .local v0, "N":I
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 554
+    .line 547
     const-string/jumbo v5, "\n"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 555
+    .line 548
     if-eqz p1, :cond_2
 
-    .line 556
+    .line 549
     const/4 v2, 0x0
 
     .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 557
+    .line 550
     iget-object v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -529,7 +529,7 @@
 
     check-cast v1, [J
 
-    .line 558
+    .line 551
     .local v1, "array":[J
     const/4 v3, 0x0
 
@@ -539,7 +539,7 @@
 
     if-ge v3, v5, :cond_0
 
-    .line 559
+    .line 552
     add-int/lit8 v5, v0, -0x1
 
     if-ne v2, v5, :cond_1
@@ -548,13 +548,13 @@
 
     if-ne v3, v5, :cond_1
 
-    .line 556
+    .line 549
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 562
+    .line 555
     :cond_1
     const-string/jumbo v5, " %4d %d 0x%016x %-19d\n"
 
@@ -604,12 +604,12 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 558
+    .line 551
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 566
+    .line 559
     .end local v1    # "array":[J
     .end local v2    # "i":I
     .end local v3    # "j":I
@@ -618,7 +618,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 567
+    .line 560
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -627,37 +627,35 @@
 .end method
 
 .method public readFromParcel(Landroid/os/Parcel;)V
-    .locals 8
+    .locals 5
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    const/4 v6, 0x0
-
-    .line 522
+    .line 521
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mSequence:I
 
-    .line 523
+    .line 522
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
-    .line 525
+    .line 524
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 526
+    .line 525
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 527
+    .line 526
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -665,133 +663,33 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 528
+    .line 527
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 529
+    .line 528
     .local v3, "size":I
     new-array v1, v3, [J
 
-    .line 530
+    .line 529
     .local v1, "array":[J
     invoke-static {p1, v1, v3}, Lcom/android/internal/app/procstats/SparseMappingTable;->readCompactedLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 531
+    .line 530
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 527
+    .line 526
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 534
+    .line 520
     .end local v1    # "array":[J
     .end local v3    # "size":I
     :cond_0
-    if-lez v0, :cond_1
-
-    iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
-
-    add-int/lit8 v5, v0, -0x1
-
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, [J
-
-    array-length v4, v4
-
-    iget v5, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
-
-    if-eq v4, v5, :cond_1
-
-    .line 535
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const-string/jumbo v5, "73252178"
-
-    aput-object v5, v4, v6
-
-    const/4 v5, -0x1
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    aput-object v5, v4, v6
-
-    const-string/jumbo v5, ""
-
-    const/4 v6, 0x2
-
-    aput-object v5, v4, v6
-
-    const v5, 0x534e4554
-
-    invoke-static {v5, v4}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 536
-    new-instance v5, Ljava/lang/IllegalStateException;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "Expected array of length "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v6, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v6, " but was "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    .line 537
-    iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
-
-    add-int/lit8 v7, v0, -0x1
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, [J
-
-    array-length v4, v4
-
-    .line 536
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v5, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v5
-
-    .line 521
-    :cond_1
     return-void
 .end method
 
@@ -799,12 +697,12 @@
     .locals 2
 
     .prologue
-    .line 490
+    .line 489
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 491
+    .line 490
     iget-object v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     const/16 v1, 0x1000
@@ -813,19 +711,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 492
+    .line 491
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
-    .line 496
+    .line 495
     iget v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mSequence:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mSequence:I
 
-    .line 488
+    .line 487
     return-void
 .end method
 
@@ -834,28 +732,28 @@
     .param p1, "out"    # Landroid/os/Parcel;
 
     .prologue
-    .line 503
+    .line 502
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mSequence:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 504
+    .line 503
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 505
+    .line 504
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 506
+    .line 505
     .local v0, "N":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 507
+    .line 506
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -864,7 +762,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 508
+    .line 507
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -873,23 +771,23 @@
 
     check-cast v1, [J
 
-    .line 509
+    .line 508
     .local v1, "array":[J
     array-length v4, v1
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 510
+    .line 509
     array-length v4, v1
 
     invoke-static {p1, v1, v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->writeCompactedLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 507
+    .line 506
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 513
+    .line 512
     .end local v1    # "array":[J
     :cond_0
     iget-object v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mLongs:Ljava/util/ArrayList;
@@ -902,17 +800,17 @@
 
     check-cast v3, [J
 
-    .line 514
+    .line 513
     .local v3, "lastLongs":[J
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 515
+    .line 514
     iget v4, p0, Lcom/android/internal/app/procstats/SparseMappingTable;->mNextIndex:I
 
     invoke-static {p1, v3, v4}, Lcom/android/internal/app/procstats/SparseMappingTable;->writeCompactedLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 502
+    .line 501
     return-void
 .end method

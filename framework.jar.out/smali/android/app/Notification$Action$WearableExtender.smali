@@ -95,7 +95,7 @@
     .line 1347
     const-string/jumbo v1, "flags"
 
-    invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {v0, v1, v3}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
@@ -242,7 +242,7 @@
 
     iget v2, p0, Landroid/app/Notification$Action$WearableExtender;->mFlags:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 1366
     :cond_0

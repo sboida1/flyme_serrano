@@ -383,17 +383,18 @@
     .line 677
     const/4 v12, 0x0
 
-    .line 682
+    .line 681
     .local v12, "bitmap":Landroid/graphics/Bitmap;
+    new-instance v17, Landroid/media/MiniThumbFile;
+
     if-eqz p8, :cond_2
 
     sget-object v4, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 681
     :goto_0
-    invoke-static {v4}, Landroid/media/MiniThumbFile;->instance(Landroid/net/Uri;)Landroid/media/MiniThumbFile;
+    move-object/from16 v0, v17
 
-    move-result-object v17
+    invoke-direct {v0, v4}, Landroid/media/MiniThumbFile;-><init>(Landroid/net/Uri;)V
 
     .line 683
     .local v17, "thumbFile":Landroid/media/MiniThumbFile;
